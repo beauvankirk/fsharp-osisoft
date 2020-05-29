@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>5c41a6f4-ae14-4e76-a57c-3353638d0f52</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FSharpOSIsoft</RootNamespace>
+    <AssemblyName>FSharpOSIsoft</AssemblyName>
+    <UseStandardResourceNames>true</UseStandardResourceNames>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <WarningsAsErrors>3239;$(WarningsAsErrors)</WarningsAsErrors>
+    <Name>FSharpOSIsoft</Name>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(FSharpTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets') ">
+    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+  </PropertyGroup>
+  <Import Project="$(FSharpTargetsPath)" />
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Library1.fs" />
+    <None Include="Script.fsx" />
+    <Content Include="packages.config" />
+    <COMReference Include="OLE Automation">
+      <Guid>{00020430-0000-0000-c000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <Isolated>False</Isolated>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <COMReference Include="PI-ProcessBook Symbol Library">
+      <Guid>{c8c67c62-c9a5-11d1-a499-00a0c9236737}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <Isolated>False</Isolated>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="PI-ProcessBook Type Library">
+      <Guid>{0cf87d80-9e07-11cf-840c-00aa00422a4a}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <Isolated>False</Isolated>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.ComProvider">
+      <HintPath>..\packages\FSharp.ComProvider.1.0.0-pre1\lib\net40\FSharp.ComProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Control.AsyncSeq">
+      <HintPath>..\packages\FSharp.Control.AsyncSeq.2.0.21\lib\net45\FSharp.Control.AsyncSeq.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.7.0\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharpPlus">
+      <HintPath>..\packages\FSharpPlus.1.0.0\lib\net45\FSharpPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharpx.Async">
+      <HintPath>..\packages\FSharpx.Async.1.14.1\lib\net452\FSharpx.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharpx.Collections">
+      <HintPath>..\packages\FSharpx.Collections.2.1.2\lib\net45\FSharpx.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharpx.Collections.Experimental">
+      <HintPath>..\packages\FSharpx.Collections.Experimental.2.1.2\lib\net45\FSharpx.Collections.Experimental.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharpx.Extras">
+      <HintPath>..\packages\FSharpx.Extras.2.3.2\lib\netstandard2.0\FSharpx.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.AFSDK">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\PIPC\AF\PublicAssemblies\4.0\OSIsoft.AFSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.ValueTuple">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj">
+      <Name>ExtensionMethods</Name>
+      <Project>{d8f9ebf8-76a6-423a-8313-82aa40d1a7c2}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
